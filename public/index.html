@@ -5,12 +5,22 @@
     <link rel="stylesheet" href="/styles.css"/>
     <title>My jokes</title>
   </head>
-  <body>
+  <body background="pics/images 8.jpg";>
+
     <div id="app">
+	
       <h1>When ever you need a laugh</h1>
-      <p v-show="activeItems.length === 0">There are no jokes. Ask a friend and add one!</p>
+      <h2 v-show="activeItems.length === 0">There are no jokes. Ask a friend and add one!</h2>
+	<h2 v-show="activeItems.length === 1">Wait, you only have one joke? Come on add some more</h2>
+	<h2 v-show="activeItems.length === 2">Oh you are adding more. Keep it up.</h2>
+	<h2 v-show="activeItems.length === 3">Really? That's the one you added?</h2>
+	<h2 v-show="activeItems.length === 4">That one is better</h2>
+	<h2 v-show="activeItems.length === 5">Okay, you are on your own know. Keep the jokes coming!</h2>
+	<h2 v-show="activeItems.length > 5">Just keep adding the jokes you like.</h2>
       <form v-on:submit.prevent="addItem">
+	<h3>Enter you fav joke and the punch line!</h3>
 	<input type="text" v-model="text">
+	<input type="text" v-model="answer">
 	<button type="submit">Add a joke</button>
       </form>
       <div class="controls">
@@ -28,5 +38,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.js" integrity="sha256-pU9euBaEcVl8Gtg+FRYCtin2vKLN8sx5/4npZDmY2VA=" crossorigin="anonymous"></script>
     <script src="/script.js"></script>
   </body>
-<div class="footer"><a href="https://github.com/BYU-CS260-Winter-2018/lab-4-izyp0007">URL to GitHub</div>
+<footer>
+<p><a href="https://github.com/BYU-CS260-Winter-2018/lab-4-izyp0007">URL to GitHub</p>
+</footer>
 </html>

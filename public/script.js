@@ -3,8 +3,12 @@ var app = new Vue({
   data: {
     items: [],
     text: '',
+    answer: '',
     show: 'all',
     drag: {},
+  },
+	created: function() {
+    this.getItems();
   },
   computed: {
     activeItems: function() {
@@ -12,9 +16,7 @@ var app = new Vue({
 	return !item.completed;
       });
     },
-	created: function() {
-    this.getItems();
-  },
+
     filteredItems: function() {
       if (this.show === 'active')
 	return this.items.filter(function(item) {
@@ -37,10 +39,11 @@ var app = new Vue({
     },
      addItem: function() {
       axios.post("/api/items", {
-	text: this.text,
+	text: "Joke- "+this.text+"  -----  Answer- "+this.answer,
 	completed: false
       }).then(response => {
 	this.text = "";
+	this.answer="";
 	this.getItems();
 	return true;
       }).catch(err => {
