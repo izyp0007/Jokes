@@ -9,7 +9,7 @@
 
     <div id="app">
 	
-      <h1>Live & Laugh</h1>
+      <h1>Share Your Best Jokes</h1>
       <h2 v-show="activeItems.length === 0">There are no jokes. Ask a friend and add one!</h2>
 	<h2 v-show="activeItems.length === 1">Wait, you only have one joke? Come on add some more</h2>
 	<h2 v-show="activeItems.length === 2">Oh you are adding more. Keep it up.</h2>
@@ -18,7 +18,7 @@
 	<h2 v-show="activeItems.length === 5">Okay, you are on your own know. Keep the jokes coming!</h2>
 	<h2 v-show="activeItems.length > 5">Just keep adding the jokes you like.</h2>
       <form v-on:submit.prevent="addItem">
-	<h3>Enter you fav joke and the punch line!</h3>
+	<h3>Enter you favorite joke and the punch line!</h3>
 	<input type="text" v-model="text">
 	<input type="text" v-model="answer">
 	<button type="submit">Add a joke</button>
